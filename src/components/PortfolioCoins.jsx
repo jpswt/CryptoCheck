@@ -7,10 +7,13 @@ import { db } from '../firebase';
 const PortfolioCoins = () => {
 	const [coins, setCoins] = useState([]);
 	const { user } = UserAuth();
+	const [isLoading, setLoading] = useState(false);
 
 	useEffect(() => {
 		onSnapshot(doc(db, 'users', `${user.email}`), (doc) => {
+			setLoading(true);
 			setCoins(doc.data()?.coinList);
+			setLoading(false);
 		});
 	}, [user.email]);
 
@@ -27,9 +30,18 @@ const PortfolioCoins = () => {
 		}
 	};
 
+	if (isLoading) {
+		return (
+			<div className=" flex min-h-[calc(100vh-400px)] items-center justify-center">
+				<span className="mr-6 text-3xl">Loading Crypto Data</span>
+				<span className="loading loading-spinner loading-lg"></span>
+			</div>
+		);
+	}
+
 	return (
 		<div>
-			{coins?.length === 0 ? (
+			{isLoading === false && coins.length === 0 ? (
 				<p className="text-center">
 					Currently no coins saved to your portfolio.{' '}
 					<Link to="/">Click here to search for coins to add.</Link>

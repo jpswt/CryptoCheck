@@ -38,18 +38,19 @@ const Navbar = () => {
 					</Link>
 				</div>
 				<div className="hidden md:flex md:items-center">
+					<Link to="/" className="p-4 hover:text-accent">
+						Home
+					</Link>
+					<Link to="/portfolio" className="p-4 hover:text-accent">
+						{user?.email ? 'My Portfolio' : 'Portfolio'}
+					</Link>
 					{user?.email ? (
-						<>
-							<Link to="/portfolio" className="p-4 hover:text-accent">
-								My Portfolio
-							</Link>
-							<Link
-								onClick={handleLogout}
-								className="mx-2 rounded-lg bg-button px-5 py-1 text-buttonText "
-							>
-								Logout
-							</Link>
-						</>
+						<Link
+							onClick={handleLogout}
+							className="mx-2 rounded-lg bg-button px-5 py-1 text-buttonText "
+						>
+							Logout
+						</Link>
 					) : (
 						<>
 							<Link to="/register" className="p-4 hover:text-accent">
@@ -64,6 +65,7 @@ const Navbar = () => {
 							</Link>
 						</>
 					)}
+
 					<div>
 						<ToggleBtn />
 					</div>
@@ -83,24 +85,28 @@ const Navbar = () => {
 				<div
 					className={
 						toggleMenu
-							? 'fixed left-0 top-20 z-10 flex h-[90%] w-full flex-col items-center justify-between bg-primary duration-300 ease-in md:hidden'
-							: 'fixed left-[-100%] top-20 flex h-[90%] flex-col items-center justify-between duration-300 ease-in '
+							? 'fixed left-0 top-20 z-10 flex h-[90%] w-full flex-col items-center bg-primary duration-300 ease-in md:hidden'
+							: 'fixed left-[-100%] top-20 flex h-[90%] flex-col items-center duration-300 ease-in '
 					}
 				>
-					<ul className="w-full p-4 ">
-						<li className="border-b py-6">
+					<div className="flex w-full justify-end">
+						<ToggleBtn />
+					</div>
+
+					<ul className="w-full p-2 ">
+						<li className="border-b px-2 py-6">
 							<Link onClick={handleMenuClose} to="/">
 								Home
 							</Link>
 						</li>
-						<li className="border-b py-6">
+						<li className="border-b px-2 py-6">
 							<Link onClick={handleMenuClose} to="/portfolio">
 								Portfolio
 							</Link>
 						</li>
-						<li className="py-6">
+						{/* <li className="py-6">
 							<ToggleBtn />
-						</li>
+						</li> */}
 					</ul>
 					<div className="flex w-full flex-col p-4">
 						{user?.email ? (
@@ -123,7 +129,7 @@ const Navbar = () => {
 								<Link
 									onClick={handleMenuClose}
 									to="/login"
-									className="my-2 w-full rounded-2xl border border-secondary bg-button p-3 text-center text-primary shadow-xl"
+									className="my-2 w-full rounded-2xl border border-secondary bg-button p-3 text-center text-buttonText shadow-xl"
 								>
 									<button>Login</button>
 								</Link>

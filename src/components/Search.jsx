@@ -5,7 +5,7 @@ const Search = ({ setSearch }) => {
 			<form>
 				<input
 					onChange={(e) => setSearch(e.target.value)}
-					className="w-full rounded-lg border border-input bg-primary px-4 py-2 text-primary shadow-md"
+					className="w-full rounded-lg border border-input bg-primary px-4 py-2 text-primary placeholder-primary shadow-md"
 					type="text"
 					placeholder="Search crypto..."
 				/>

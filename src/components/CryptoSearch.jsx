@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import CryptoCoin from './CryptoCoin';
 import Search from './Search';
 
-const CryptoSearch = ({ crypto }) => {
+const CryptoSearch = ({ crypto, isLoading }) => {
 	const [search, setSearch] = useState('');
 
 	const handleScrollY = (e) => {
@@ -18,6 +18,15 @@ const CryptoSearch = ({ crypto }) => {
 	useEffect(() => {
 		window.addEventListener('scroll', handleScrollY());
 	}, []);
+
+	if (isLoading) {
+		return (
+			<div className=" flex min-h-[calc(100vh-400px)] items-center justify-center">
+				<span className="mr-6 text-3xl">Loading Crypto Data</span>
+				<span className="loading loading-spinner loading-lg"></span>
+			</div>
+		);
+	}
 
 	return (
 		<div className="mx-auto my-4 w-full max-w-[1200px]   bg-primary px-2 font-bold">

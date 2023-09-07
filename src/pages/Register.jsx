@@ -29,7 +29,7 @@ const Register = () => {
 					<h1 className="text-5xl font-bold text-accent">Register</h1>
 					<p className="py-6"></p>
 				</div>
-				<div className="card w-full min-w-[26rem] max-w-[36rem] bg-table shadow-2xl lg:flex-shrink-0">
+				<div className="card w-full min-w-[26rem] max-w-[36rem] bg-accent shadow-2xl lg:flex-shrink-0">
 					<form onSubmit={handleSubmit} className="card-body ">
 						<div className="form-control">
 							<label className="label">
@@ -72,40 +72,6 @@ const Register = () => {
 				</div>
 			</div>
 		</div>
-		// <div className="flex min-h-[calc(100vh-160px)] flex-col items-center justify-center">
-		// 	<div className="min-w-[400px]">
-		// 		<h1 className="mb-4 text-2xl font-bold">Register</h1>
-		// 		<form action="">
-		// 			<div>
-		// 				<div>
-		// 					<input
-		// 						className="w-full border-b-2 border-table bg-primary py-2"
-		// 						type="email"
-		// 						placeholder="Email"
-		// 					/>
-		// 				</div>
-		// 			</div>
-		// 			<div className="mt-4">
-		// 				<div>
-		// 					<input
-		// 						className="w-full border-b-2 border-table bg-primary py-2"
-		// 						type="password"
-		// 						placeholder="Password"
-		// 					/>
-		// 				</div>
-		// 			</div>
-		// 			<button className="mb-2 mt-6 w-full rounded-md bg-button py-2 font-bold text-buttonText">
-		// 				Register
-		// 			</button>
-		// 			<p className="text-center">
-		// 				Already have an acount.{' '}
-		// 				<Link to="/login" className="font-bold text-accent">
-		// 					Login
-		// 				</Link>
-		// 			</p>
-		// 		</form>
-		// 	</div>
-		// </div>
 	);
 };
 export default Register;

@@ -28,6 +28,9 @@ export default {
 			outlineColor: {
 				accent: 'var(--color-text-accent)',
 			},
+			placeholderColor: {
+				primary: 'var(--color-text-secondary)',
+			},
 		},
 	},
 	plugins: [require('daisyui')],
