@@ -48,13 +48,15 @@ const Crypto = () => {
 				<RankBtn>Rank #{coin?.market_cap_rank}</RankBtn>
 				<div className="flex items-center gap-3 py-2">
 					<img className="h-[60px] w-[60px]" src={coin?.image?.large} alt="" />
-					<h1 className=" text-2xl font-semibold">{coin?.name}</h1>
-					<p className=" text-xl text-gray-400">
-						{coin?.symbol?.toUpperCase()}
-					</p>
+					<h1 className=" text-2xl font-semibold">
+						{coin?.name}{' '}
+						<span className="pl-2 text-xl text-primary opacity-70">
+							{coin?.symbol?.toUpperCase()}
+						</span>
+					</h1>
 				</div>
 			</div>
-			<div className="mx-6 pb-6">
+			<div className="mx-2 pb-6">
 				{coin?.market_data?.current_price ? (
 					<p className="text-3xl font-bold">
 						<span>
@@ -86,7 +88,7 @@ const Crypto = () => {
 					) : null}
 				</div>
 				<div className="flex items-center justify-between border-b-2 border-table px-2 py-2 ">
-					<p className=" text-secondary">24 Hour Trading Volume</p>
+					<p className=" text-secondary">24h Trading Volume</p>
 					{coin?.market_data?.circulating_supply ? (
 						<p className="font-bold">
 							${coin?.market_data?.circulating_supply?.toLocaleString()}
@@ -102,7 +104,7 @@ const Crypto = () => {
 					) : null}
 				</div>
 				<div className="flex items-center justify-between border-b-2 border-table px-2 py-2">
-					<p className=" text-secondary">Total supply</p>
+					<p className=" text-secondary">Total Supply</p>
 					{coin?.market_data?.total_supply ? (
 						<p className="font-bold">
 							${coin?.market_data?.total_supply?.toLocaleString()}
@@ -110,7 +112,7 @@ const Crypto = () => {
 					) : null}
 				</div>
 				<div className="flex items-center justify-between border-b-2 border-table px-2 py-2">
-					<p className=" text-secondary">Max supply</p>
+					<p className=" text-secondary">Max Supply</p>
 					{coin?.market_data?.max_supply ? (
 						<p className="font-bold">
 							${coin?.market_data?.max_supply?.toLocaleString()}
@@ -122,7 +124,7 @@ const Crypto = () => {
 			</div>
 
 			<div className="mt-10 grid md:grid-cols-2 lg:grid-cols-3">
-				<div className="col-span-2 m-2">
+				<div className="col-span-2 m-1 mb-4 md:mb-0 ">
 					<div className="mb-6">
 						<h2 className="  text-2xl font-semibold ">
 							{coin?.name} Price Chart ({coin?.symbol?.toUpperCase()})
@@ -168,8 +170,9 @@ const Crypto = () => {
 				</div>
 
 				<div className="col-span-2 m-2 rounded-md bg-accent p-4 md:col-span-2 lg:col-span-1">
-					<h2 className="mb-6 text-2xl font-semibold">
-						{coin?.symbol.toUpperCase()} Price Statistics (USD)
+					<h2 className="mb-2 flex items-center gap-2 text-2xl font-semibold">
+						<span>{coin?.symbol.toUpperCase()} Price Statistics </span>
+						<span className="text-lg">(USD)</span>
 					</h2>
 					<div className=" border-b-2 border-table py-3">
 						<div className="flex items-center justify-between">
@@ -190,7 +193,7 @@ const Crypto = () => {
 						<div className="flex items-center justify-between">
 							<div className="flex flex-1 justify-between ">
 								<div>
-									<p className="text-md text-secondary">24h Low</p>
+									<p className="text-md mb-1 text-secondary">24h Low</p>
 									{coin?.market_data?.low_24h ? (
 										<p className="text-md font-semibold">
 											<span>
@@ -203,7 +206,9 @@ const Crypto = () => {
 									) : null}
 								</div>
 								<div>
-									<p className="text-md text-secondary">24h High</p>
+									<p className="text-md mb-1 text-right text-secondary">
+										24h High
+									</p>
 									{coin?.market_data?.high_24h ? (
 										<p className="text-md font-semibold">
 											<span>
@@ -223,7 +228,7 @@ const Crypto = () => {
 						<div className="flex items-center justify-between">
 							<div className="flex flex-1 justify-between ">
 								<div>
-									<p className="text-md text-secondary">7d Low</p>
+									<p className="text-md mb-1 text-secondary">7d Low</p>
 									{coin?.market_data?.sparkline_7d?.price ? (
 										<p className="text-md font-semibold">
 											<span>
@@ -238,7 +243,9 @@ const Crypto = () => {
 									) : null}
 								</div>
 								<div>
-									<p className="text-md text-secondary">7d High</p>
+									<p className="text-md mb-1 text-right text-secondary">
+										7d High
+									</p>
 									{coin?.market_data?.sparkline_7d?.price ? (
 										<p className="text-md font-semibold">
 											<span>
@@ -255,29 +262,29 @@ const Crypto = () => {
 							</div>
 						</div>
 					</div>
-					<div className=" py-3">
+					<div className=" py-3 pb-0">
 						<div className="flex items-center justify-between">
 							<div className="flex flex-1 justify-between ">
 								<div>
-									<p className="text-md text-secondary">All-Time Low</p>
+									<p className="text-md mb-1 text-secondary">All-Time Low</p>
 									{coin?.market_data?.atl ? (
 										<div>
 											<div>
-												<span className="text-md font-semibold">
+												<p className="text-md font-semibold">
 													${coin?.market_data?.atl?.usd.toLocaleString()}
-												</span>
-												<span
+												</p>
+												<p
 													className={
 														coin?.market_data?.atl_change_percentage?.usd > 0
-															? 'pl-2 text-green-500'
-															: 'pl-2 text-red-500'
+															? ' text-green-500'
+															: ' text-red-500'
 													}
 												>
 													{coin?.market_data?.atl_change_percentage?.usd.toFixed(
 														2
 													)}
 													%
-												</span>
+												</p>
 											</div>
 											<span className="text-right text-sm">
 												{new Intl.DateTimeFormat('en-US', {
@@ -290,27 +297,27 @@ const Crypto = () => {
 									) : null}
 								</div>
 								<div>
-									<p className="text-md text-center text-secondary">
+									<p className="text-md mb-1  text-right text-secondary">
 										All-Time High
 									</p>
 									{coin?.market_data?.ath ? (
 										<div>
 											<div>
-												<span className="text-md font-semibold">
+												<p className="text-md text-right font-semibold">
 													${coin?.market_data?.ath?.usd.toLocaleString()}
-												</span>
-												<span
+												</p>
+												<p
 													className={
 														coin?.market_data?.ath_change_percentage?.usd > 0
-															? 'pl-2 text-green-500'
-															: 'pl-2 text-red-500'
+															? ' text-right text-green-500'
+															: ' text-right text-red-500'
 													}
 												>
 													{coin?.market_data?.ath_change_percentage?.usd.toFixed(
 														2
 													)}
 													%
-												</span>
+												</p>
 											</div>
 											<span className="text-right text-sm">
 												{new Intl.DateTimeFormat('en-US', {

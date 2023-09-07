@@ -38,24 +38,31 @@ const Navbar = () => {
 					</Link>
 				</div>
 				<div className="hidden md:flex md:items-center">
-					<Link to="/register" className="p-4 hover:text-accent">
-						Register
-					</Link>
 					{user?.email ? (
-						<Link
-							onClick={handleLogout}
-							className="mx-2 rounded-lg bg-button px-5 py-1 text-buttonText "
-						>
-							Logout
-						</Link>
+						<>
+							<Link to="/portfolio" className="p-4 hover:text-accent">
+								My Portfolio
+							</Link>
+							<Link
+								onClick={handleLogout}
+								className="mx-2 rounded-lg bg-button px-5 py-1 text-buttonText "
+							>
+								Logout
+							</Link>
+						</>
 					) : (
-						<Link
-							onClick={handleMenuClose}
-							to="/login"
-							className="mx-2 rounded-lg bg-button px-5 py-1 text-buttonText "
-						>
-							Login
-						</Link>
+						<>
+							<Link to="/register" className="p-4 hover:text-accent">
+								Register
+							</Link>
+							<Link
+								onClick={handleMenuClose}
+								to="/login"
+								className="mx-2 rounded-lg bg-button px-5 py-1 text-buttonText "
+							>
+								Login
+							</Link>
+						</>
 					)}
 					<div>
 						<ToggleBtn />
@@ -96,29 +103,31 @@ const Navbar = () => {
 						</li>
 					</ul>
 					<div className="flex w-full flex-col p-4">
-						<Link
-							onClick={handleMenuClose}
-							to="/register"
-							className="my-2 w-full rounded-2xl border border-secondary bg-button p-3 text-center text-buttonText shadow-xl"
-						>
-							<button>Register</button>
-						</Link>
 						{user?.email ? (
 							<Link
 								onClick={handleLogout}
 								to="/"
-								className="my-2 w-full rounded-2xl border border-secondary bg-primary p-3 text-center text-primary shadow-xl"
+								className="my-2 w-full rounded-2xl border border-secondary bg-button p-3 text-center text-white shadow-xl"
 							>
 								<button>Logout</button>
 							</Link>
 						) : (
-							<Link
-								onClick={handleMenuClose}
-								to="/login"
-								className="my-2 w-full rounded-2xl border border-secondary bg-primary p-3 text-center text-primary shadow-xl"
-							>
-								<button>Login</button>
-							</Link>
+							<>
+								<Link
+									onClick={handleMenuClose}
+									to="/register"
+									className="my-2 w-full rounded-2xl border border-secondary bg-button p-3 text-center text-buttonText shadow-xl"
+								>
+									<button>Register</button>
+								</Link>
+								<Link
+									onClick={handleMenuClose}
+									to="/login"
+									className="my-2 w-full rounded-2xl border border-secondary bg-button p-3 text-center text-primary shadow-xl"
+								>
+									<button>Login</button>
+								</Link>
+							</>
 						)}
 					</div>
 				</div>

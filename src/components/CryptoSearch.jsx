@@ -20,7 +20,7 @@ const CryptoSearch = ({ crypto }) => {
 	}, []);
 
 	return (
-		<div className="mx-auto my-4 w-full max-w-[1200px] rounded-2xl border border-secondary bg-primary px-2 font-bold shadow-lg">
+		<div className="mx-auto my-4 w-full max-w-[1200px]   bg-primary px-2 font-bold">
 			<div>
 				<Search setSearch={setSearch} />
 			</div>

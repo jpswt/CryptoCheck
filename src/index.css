@@ -9,13 +9,13 @@
 .dark {
 	--color-bg-primary: #323944;
 	--color-bg-secondary: #30333f;
-	--color-bg-accent: #565b62;
+	--color-bg-accent: #424953;
 	--color-text-primary: #dbdbdb;
 	--color-text-secondary: #ccd2da;
 	--color-text-accent: #8cc646;
 	--color-bg-input: #4a5361;
 	--color-bg-button: #8cc646;
-	--color-bg-table: #7e8186;
+	--color-bg-table: #d1d5db;
 }
 
 .light {

@@ -28,7 +28,7 @@ const Login = () => {
 					<h1 className="text-5xl font-bold text-accent">Login</h1>
 					<p className="py-6"></p>
 				</div>
-				<div className="card w-full min-w-[26rem] max-w-[36rem]  bg-table shadow-2xl lg:flex-shrink-0">
+				<div className="card w-full min-w-[26rem] max-w-[36rem]  bg-accent shadow-2xl lg:flex-shrink-0">
 					<form onSubmit={handleSubmit} className="card-body ">
 						<div className="form-control">
 							<label className="label">
