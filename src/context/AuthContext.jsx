@@ -17,7 +17,7 @@ export const AuthContextProvider = ({ children }) => {
 	const register = (email, password) => {
 		createUserWithEmailAndPassword(auth, email, password);
 		return setDoc(doc(db, 'users', email), {
-			watchList: [],
+			coinList: [],
 		});
 	};
 	const login = (email, password) => {
