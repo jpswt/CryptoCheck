@@ -1,13 +1,13 @@
 import { Route, Routes } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import Home from '../src/pages/Home';
-import Login from '../src/pages/Login';
-import Register from '../src/pages/Register';
-import Crypto from '../src/pages/Crypto';
-import { UserAuth } from '../src/context/AuthContext';
-import Portfolio from '../src/pages/Portfolio';
-import Landing from '../src/pages/Landing';
+import Home from '../pages/Home';
+import Login from '../pages/Login';
+import Register from '../pages/Register';
+import Crypto from '../pages/Crypto';
+import { UserAuth } from '../context/AuthContext';
+import Portfolio from '../pages/Portfolio';
+import Landing from '../pages/Landing';
 
 const Router = () => {
 	const [crypto, setCrypto] = useState([]);
