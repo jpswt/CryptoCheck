@@ -32,13 +32,13 @@ const Navbar = () => {
 		<div className=" flex h-[80px] w-full border-b-2 border-table shadow-lg">
 			<div className="mx-auto flex w-full max-w-[1200px] items-center justify-between border-secondary bg-primary px-2 font-bold ">
 				<div>
-					<Link to="/" className="flex items-center gap-2">
+					<Link to="/home" className="flex items-center gap-2">
 						<h1 className="text-2xl">CryptoCheck</h1>
 						<IoShieldCheckmarkOutline className="text-3xl font-extrabold text-accent" />
 					</Link>
 				</div>
 				<div className="hidden md:flex md:items-center">
-					<Link to="/" className="p-4 hover:text-accent">
+					<Link to="/home" className="p-4 hover:text-accent">
 						Home
 					</Link>
 					<Link to="/portfolio" className="p-4 hover:text-accent">
@@ -95,7 +95,7 @@ const Navbar = () => {
 
 					<ul className="w-full p-2 ">
 						<li className="border-b px-2 py-6">
-							<Link onClick={handleMenuClose} to="/">
+							<Link onClick={handleMenuClose} to="/home">
 								Home
 							</Link>
 						</li>

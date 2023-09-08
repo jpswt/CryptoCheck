@@ -16,6 +16,8 @@
 	--color-bg-input: #4a5361;
 	--color-bg-button: #8cc646;
 	--color-bg-table: #d1d5db;
+	--color-shadow: hsla(0, 0%, 66%, 0.25);
+	--color-gradient: radial-gradient(circle at top, #6bb3ff, #2b6cb0);
 }
 
 .light {
@@ -28,4 +30,6 @@
 	--color-bg-input: #edf2f7;
 	--color-bg-button: #2b6cb0;
 	--color-bg-table: #d1d5db;
+	--color-shadow: hsla(0, 0%, 0%, 0.5);
+	--color-gradient: radial-gradient(circle at top, #6bb3ff, #2b6cb0);
 }

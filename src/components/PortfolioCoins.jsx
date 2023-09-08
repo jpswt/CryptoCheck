@@ -44,7 +44,7 @@ const PortfolioCoins = () => {
 			{isLoading === false && coins.length === 0 ? (
 				<p className="text-center">
 					Currently no coins saved to your portfolio.{' '}
-					<Link to="/">Click here to search for coins to add.</Link>
+					<Link to="/home">Click here to search for coins to add.</Link>
 				</p>
 			) : (
 				<div>

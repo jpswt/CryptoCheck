@@ -10,7 +10,10 @@ export default {
 				button: 'var(--color-bg-button)',
 				accent: 'var(--color-bg-accent)',
 				table: 'var(--color-bg-table)',
+				input: 'var(--color-bg-input)',
+				gradient: 'var(--color-gradient)',
 			},
+
 			textColor: {
 				primary: 'var(--color-text-primary)',
 				secondary: 'var(--color-text-secondary)',
@@ -30,6 +33,10 @@ export default {
 			},
 			placeholderColor: {
 				primary: 'var(--color-text-secondary)',
+			},
+			colors: {
+				primary: 'var(--color-shadow)',
+				grad1: 'var(--color-bg-button)',
 			},
 		},
 	},
