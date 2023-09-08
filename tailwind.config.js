@@ -40,8 +40,5 @@ export default {
 			},
 		},
 	},
-	plugins: [require(getDaisyUI())],
+	plugins: [require('daisyui')],
 };
-function getDaisyUI() {
-	return "daisyui";
-  }
