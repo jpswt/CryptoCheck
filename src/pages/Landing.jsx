@@ -1,29 +1,51 @@
 import { IoArrowUpCircle, IoArrowForwardCircle } from 'react-icons/io5';
 import { Sparklines, SparklinesLine } from 'react-sparklines';
+import { useContext } from 'react';
+import { ThemeContext } from '../context/Theme';
+import bcDark from '../assets/images/bc-landing-dark.svg';
+import bcLight from '../assets/images/bc-landing-light.svg';
 
 const Landing = ({ crypto }) => {
+	const { theme, setTheme } = useContext(ThemeContext);
 	const trending = crypto?.slice(0, 4);
 	console.log(trending);
 	return (
 		<div>
-			<div className="mx-auto flex min-h-[calc(100vh-80px)] max-w-[1200px] flex-col items-center justify-evenly p-2">
-				<div className="flex flex-col items-center">
-					<h1 className="text-center text-3xl font-bold sm:text-3xl md:text-4xl">
-						Create and Track Your Crypto Portfolio Here
-					</h1>
-					<h2 className="mt-6 max-w-[400px] text-center text-lg leading-normal sm:text-xl md:max-w-[600px] md:text-2xl  ">
-						At CryptoCheck, you can build a portfolio and track the current
-						market changes.
-					</h2>
-					<button className="mt-8 rounded-md bg-button px-8 py-3 font-bold text-buttonText shadow-md">
-						Get Started
-					</button>
+			<div className="mx-auto flex min-h-[calc(100vh-80px)] max-w-[1200px] flex-col items-center  p-2">
+				<div className="flex min-h-[40vh] w-full flex-col  items-center justify-between md:flex-row">
+					<div>
+						{theme === 'light' ? (
+							<img
+								className="w-[600px] md:w-[700px]"
+								src={bcLight}
+								alt="laptop with bitcoin logo on it"
+							/>
+						) : (
+							<img
+								className="w-[600px] md:w-[700px]"
+								src={bcDark}
+								alt="laptop with bitcoin logo on it"
+							/>
+						)}
+					</div>
+					<div className="flex flex-col items-center md:mt-8">
+						<h1 className="text-center text-3xl font-bold sm:text-3xl md:text-3xl lg:text-4xl">
+							Create & Track Your Crypto Portfolio Here
+						</h1>
+						<h2 className="text-md mt-6 max-w-[400px] text-center leading-normal sm:text-xl md:text-lg lg:max-w-[420px] lg:text-xl  ">
+							At CryptoCheck, you can build a portfolio and track the current
+							market changes.
+						</h2>
+						<button className="mt-8 rounded-md bg-button px-8 py-3 font-bold text-buttonText shadow-md">
+							Get Started
+						</button>
+					</div>
 				</div>
-				<div className="flex w-full flex-col">
-					<h2 className="mb-4 px-2 text-center text-3xl font-bold">
+				<div className="hidden px-2 md:flex md:w-full md:flex-col">
+					<h2 className="mb-4 mt-8 px-2 text-center text-3xl font-bold">
 						Market Trends
 					</h2>
-					<div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4 ">
+					<div className="grid-cols-1 gap-8 sm:grid-cols-2 md:grid  lg:grid-cols-4 ">
 						{trending.map((coin) => (
 							<div
 								className="flex flex-col items-center rounded-lg border border-secondary bg-accent p-2 shadow-md shadow-primary"

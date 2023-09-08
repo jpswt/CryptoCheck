@@ -29,7 +29,7 @@ const Navbar = () => {
 	};
 
 	return (
-		<div className=" flex h-[80px] w-full border-b-2 border-table shadow-lg">
+		<div className=" flex h-[80px] w-full border-b-2 border-table shadow-sm">
 			<div className="mx-auto flex w-full max-w-[1200px] items-center justify-between border-secondary bg-primary px-2 font-bold ">
 				<div>
 					<Link to="/" className="flex items-center gap-2">

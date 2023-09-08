@@ -6,9 +6,9 @@ const Portfolio = () => {
 
 	const userName = user.email;
 	return (
-		<div className="mx-auto mt-4 max-w-[1200px] p-2">
+		<div className="z-0 mx-auto mt-4 max-w-[1200px] p-2">
 			<h1 className="text-xl font-bold">Welcome, {userName?.split('@')[0]}</h1>
-			<div>
+			<div className="mt-8">
 				<PortfolioCoins />
 			</div>
 		</div>

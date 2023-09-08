@@ -18,7 +18,7 @@ const PortfolioCoins = () => {
 		});
 	}, [user.email]);
 
-	console.log(coins);
+	// console.log(coins);
 
 	const coinPath = doc(db, 'users', `${user.email}`);
 
