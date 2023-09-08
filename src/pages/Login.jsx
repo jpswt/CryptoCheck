@@ -47,8 +47,8 @@ const Login = () => {
 							</label>
 							<input
 								onChange={(e) => setPassword(e.target.value)}
-								type="text"
-								placeholder="password"
+								type="password"
+								placeholder="Password"
 								className="input input-bordered bg-primary"
 							/>
 						</div>
@@ -71,41 +71,6 @@ const Login = () => {
 				</div>
 			</div>
 		</div>
-
-		// <div className="flex min-h-[calc(100vh-160px)] flex-col items-center justify-center ">
-		// 	<div className="min-w-[400px]">
-		// 		<h1 className="mb-4 text-2xl font-bold">Login</h1>
-		// 		<form action="">
-		// 			<div>
-		// 				<div>
-		// 					<input
-		// 						className="w-full border-b-2 border-table bg-primary p-2 py-2 outline-accent"
-		// 						type="email"
-		// 						placeholder="Email"
-		// 					/>
-		// 				</div>
-		// 			</div>
-		// 			<div className="mt-4">
-		// 				<div>
-		// 					<input
-		// 						className="w-full border-b-2 border-table bg-primary p-2 py-2 outline-accent"
-		// 						type="password"
-		// 						placeholder="Password"
-		// 					/>
-		// 				</div>
-		// 			</div>
-		// 			<button className="mb-2 mt-6 w-full rounded-md bg-button py-2 font-bold text-buttonText">
-		// 				Login
-		// 			</button>
-		// 			<p className="text-center">
-		// 				Don't have an account?{' '}
-		// 				<Link to="/register" className="font-bold text-accent">
-		// 					Register
-		// 				</Link>
-		// 			</p>
-		// 		</form>
-		// 	</div>
-		// </div>
 	);
 };
 export default Login;

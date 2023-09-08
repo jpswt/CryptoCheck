@@ -48,8 +48,8 @@ const Register = () => {
 							</label>
 							<input
 								onChange={(e) => setPassword(e.target.value)}
-								type="text"
-								placeholder="password"
+								type="password"
+								placeholder="Password"
 								className="input input-bordered bg-primary"
 							/>
 						</div>
