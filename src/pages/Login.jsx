@@ -16,7 +16,7 @@ const Login = () => {
 			await login(email, password);
 			setEmail('');
 			setPassword('');
-			navigate('/');
+			navigate('/portfolio');
 		} catch (err) {
 			setError(err.message);
 		}

@@ -1,21 +1,11 @@
-import { IoArrowUpCircle } from 'react-icons/io5';
+import { IoArrowUpCircle, IoArrowForwardCircle } from 'react-icons/io5';
 import { Sparklines, SparklinesLine } from 'react-sparklines';
-import { ThemeContext } from '../context/Theme';
-import { useContext } from 'react';
 
 const Landing = ({ crypto }) => {
-	const { theme, setTheme } = useContext(ThemeContext);
-
 	const trending = crypto?.slice(0, 4);
 	console.log(trending);
 	return (
-		<div
-		// className={
-		// 	theme === 'light'
-		// 		? 'min-h-screen bg-[#323944]  '
-		// 		: 'min-h-screen bg-none '
-		// }
-		>
+		<div>
 			<div className="mx-auto flex min-h-[calc(100vh-80px)] max-w-[1200px] flex-col items-center justify-evenly p-2">
 				<div className="flex flex-col items-center">
 					<h1 className="text-center text-3xl font-bold sm:text-3xl md:text-4xl">
@@ -52,7 +42,11 @@ const Landing = ({ crypto }) => {
 										</p>
 									</div>
 									<div>
-										<IoArrowUpCircle className=" rotate-45 text-2xl opacity-70" />
+										{coin.price_change_percentage_24h > 0 ? (
+											<IoArrowUpCircle className=" rotate-45 text-2xl opacity-70" />
+										) : (
+											<IoArrowForwardCircle className=" rotate-45 text-2xl opacity-70" />
+										)}
 									</div>
 								</div>
 								<div className="mt-8 flex w-full items-center justify-evenly">

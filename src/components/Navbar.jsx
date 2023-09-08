@@ -32,7 +32,7 @@ const Navbar = () => {
 		<div className=" flex h-[80px] w-full border-b-2 border-table shadow-lg">
 			<div className="mx-auto flex w-full max-w-[1200px] items-center justify-between border-secondary bg-primary px-2 font-bold ">
 				<div>
-					<Link to="/home" className="flex items-center gap-2">
+					<Link to="/" className="flex items-center gap-2">
 						<h1 className="text-2xl">CryptoCheck</h1>
 						<IoShieldCheckmarkOutline className="text-3xl font-extrabold text-accent" />
 					</Link>

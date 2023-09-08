@@ -33,7 +33,7 @@ const CryptoCoin = ({ coin }) => {
 		<>
 			<tr className="h-[85px] overflow-hidden border-b">
 				<td className="w-[20px] pl-2 pr-6" onClick={storeCoin}>
-					<IoAddCircle className="text-2xl font-extrabold text-accent" />
+					<IoAddCircle className="cursor-pointer text-2xl font-extrabold text-accent" />
 				</td>
 
 				<td className="text-left lg:w-[280px]">
