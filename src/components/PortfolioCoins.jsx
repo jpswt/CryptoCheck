@@ -1,11 +1,15 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { UserAuth } from '../context/AuthContext';
 import { doc, onSnapshot, updateDoc } from 'firebase/firestore';
 import { db } from '../firebase';
 import { FaTrashAlt } from 'react-icons/fa';
+import coinsLight from '../assets/images/coins-light.svg';
+import coinsDark from '../assets/images/coins-dark.svg';
+import { ThemeContext } from '../context/Theme';
 
 const PortfolioCoins = () => {
+	const { theme } = useContext(ThemeContext);
 	const [coins, setCoins] = useState([]);
 	const [isLoading, setLoading] = useState(false);
 	const { user } = UserAuth();
@@ -45,10 +49,24 @@ const PortfolioCoins = () => {
 	return (
 		<div>
 			{!isLoading && coins?.length === 0 ? (
-				<p className="text-center">
-					Currently no coins saved to your portfolio.{' '}
-					<Link to="/home">Click here to search for coins to add.</Link>
-				</p>
+				<div className="flex flex-col items-center">
+					{theme === 'light' ? (
+						<img src={coinsLight} alt="stack of coins" className="w-[400px]" />
+					) : (
+						<img src={coinsDark} alt="stack of coins" className="w-[400px]" />
+					)}
+					<p className="text-center text-xl font-bold">
+						Currently no coins saved to your portfolio.{' '}
+					</p>
+					<p className="text-lg">
+						<Link to="/home">
+							<span className="font-bold text-accent hover:brightness-110">
+								Click here
+							</span>
+						</Link>
+						<span> to search for coins to add.</span>
+					</p>
+				</div>
 			) : (
 				<div>
 					<div className="flex w-full items-center justify-center">
@@ -91,10 +109,10 @@ const PortfolioCoins = () => {
 										</td>
 										<td>
 											<p
-												className="flex justify-center"
+												className="flex  justify-center"
 												onClick={() => deleteCoin(coin.id)}
 											>
-												<FaTrashAlt className=" text-2xl text-red-600" />
+												<FaTrashAlt className=" cursor-pointer text-2xl text-red-600" />
 											</p>
 										</td>
 									</tr>

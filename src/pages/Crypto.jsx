@@ -210,7 +210,7 @@ const Crypto = () => {
 										24h High
 									</p>
 									{coin?.market_data?.high_24h ? (
-										<p className="text-md font-semibold">
+										<p className="text-md text-right font-semibold">
 											<span>
 												{new Intl.NumberFormat('en-EN', {
 													style: 'currency',
@@ -247,7 +247,7 @@ const Crypto = () => {
 										7d High
 									</p>
 									{coin?.market_data?.sparkline_7d?.price ? (
-										<p className="text-md font-semibold">
+										<p className="text-md text-right font-semibold">
 											<span>
 												{new Intl.NumberFormat('en-EN', {
 													style: 'currency',
@@ -301,7 +301,7 @@ const Crypto = () => {
 										All-Time High
 									</p>
 									{coin?.market_data?.ath ? (
-										<div>
+										<div className="text-right">
 											<div>
 												<p className="text-md text-right font-semibold">
 													${coin?.market_data?.ath?.usd.toLocaleString()}
@@ -319,7 +319,8 @@ const Crypto = () => {
 													%
 												</p>
 											</div>
-											<span className="text-right text-sm">
+											<span className=" text-sm">
+												{' '}
 												{new Intl.DateTimeFormat('en-US', {
 													year: 'numeric',
 													month: 'long',

@@ -47,7 +47,7 @@ const Navbar = () => {
 					{user?.email ? (
 						<Link
 							onClick={handleLogout}
-							className="mx-2 rounded-lg bg-button px-5 py-1 text-buttonText "
+							className="mx-2 rounded-lg bg-button px-5 py-1 text-buttonText hover:brightness-110 "
 						>
 							Logout
 						</Link>
@@ -59,7 +59,7 @@ const Navbar = () => {
 							<Link
 								onClick={handleMenuClose}
 								to="/login"
-								className="mx-2 rounded-lg bg-button px-5 py-1 text-buttonText "
+								className="mx-2 rounded-lg bg-button px-5 py-1 text-buttonText hover:brightness-110 "
 							>
 								Login
 							</Link>
@@ -94,13 +94,21 @@ const Navbar = () => {
 					</div>
 
 					<ul className="w-full p-2 ">
-						<li className="border-b px-2 py-6">
-							<Link onClick={handleMenuClose} to="/home">
+						<li className="border-b px-2 py-6 ">
+							<Link
+								className="text-xl hover:text-accent"
+								onClick={handleMenuClose}
+								to="/home"
+							>
 								Home
 							</Link>
 						</li>
 						<li className="border-b px-2 py-6">
-							<Link onClick={handleMenuClose} to="/portfolio">
+							<Link
+								className="text-xl hover:text-accent"
+								onClick={handleMenuClose}
+								to="/portfolio"
+							>
 								Portfolio
 							</Link>
 						</li>
@@ -113,7 +121,7 @@ const Navbar = () => {
 							<Link
 								onClick={handleLogout}
 								to="/"
-								className="my-2 w-full rounded-2xl border border-secondary bg-button p-3 text-center text-white shadow-xl"
+								className="my-2 w-full rounded-2xl border border-secondary bg-button p-3 text-center text-xl text-buttonText shadow-xl hover:brightness-110"
 							>
 								<button>Logout</button>
 							</Link>
@@ -122,14 +130,14 @@ const Navbar = () => {
 								<Link
 									onClick={handleMenuClose}
 									to="/register"
-									className="my-2 w-full rounded-2xl border border-secondary bg-button p-3 text-center text-buttonText shadow-xl"
+									className="my-2 w-full rounded-2xl border border-secondary bg-button p-3 text-center text-xl text-buttonText shadow-xl hover:brightness-110"
 								>
 									<button>Register</button>
 								</Link>
 								<Link
 									onClick={handleMenuClose}
 									to="/login"
-									className="my-2 w-full rounded-2xl border border-secondary bg-button p-3 text-center text-buttonText shadow-xl"
+									className="my-2 w-full rounded-2xl border border-secondary bg-button p-3 text-center text-xl text-buttonText shadow-xl hover:brightness-110"
 								>
 									<button>Login</button>
 								</Link>

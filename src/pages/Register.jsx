@@ -16,7 +16,7 @@ const Register = () => {
 			await register(email, password);
 			setEmail('');
 			setPassword('');
-			navigate('/login');
+			navigate('/home');
 		} catch (err) {
 			setError(err.message);
 		}

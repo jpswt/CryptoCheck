@@ -4,11 +4,14 @@ import { useContext } from 'react';
 import { ThemeContext } from '../context/Theme';
 import bcDark from '../assets/images/bc-landing-dark.svg';
 import bcLight from '../assets/images/bc-landing-light.svg';
+import { useNavigate } from 'react-router-dom';
 
 const Landing = ({ crypto }) => {
-	const { theme, setTheme } = useContext(ThemeContext);
+	const { theme } = useContext(ThemeContext);
 	const trending = crypto?.slice(0, 4);
-	console.log(trending);
+
+	const navigate = useNavigate();
+	// console.log(trending);
 	return (
 		<div>
 			<div className="mx-auto flex min-h-[calc(100vh-80px)] max-w-[1200px] flex-col items-center  p-2">
@@ -36,7 +39,10 @@ const Landing = ({ crypto }) => {
 							At CryptoCheck, you can build a portfolio and track the current
 							market changes.
 						</h2>
-						<button className="mt-8 rounded-md bg-button px-8 py-3 font-bold text-buttonText shadow-md">
+						<button
+							onClick={() => navigate('/register')}
+							className="mt-8 rounded-md bg-button px-8 py-3 font-bold text-buttonText shadow-md hover:brightness-110"
+						>
 							Get Started
 						</button>
 					</div>

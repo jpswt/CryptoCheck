@@ -34,7 +34,9 @@ const Router = () => {
 			<Route path="/" element={<Landing crypto={crypto} />} />
 			<Route
 				path="/home"
-				element={<Home crypto={crypto} isLoading={isLoading} />}
+				element={
+					user ? <Home crypto={crypto} isLoading={isLoading} /> : <Login />
+				}
 			/>
 			<Route path="/login" element={<Login />} />
 			<Route path="/register" element={<Register />} />
