@@ -36,8 +36,8 @@ const Landing = ({ crypto }) => {
 							Create & Track Your Crypto Portfolio Here
 						</h1>
 						<h2 className="text-md mt-6 max-w-[400px] text-center leading-normal sm:text-xl md:text-lg lg:max-w-[420px] lg:text-xl  ">
-							At CryptoCheck, you can build a portfolio and track the current
-							market changes.
+							At CryptoCheck, you can add to your portfolio and track the
+							current market changes.
 						</h2>
 						<button
 							onClick={() => navigate('/register')}
