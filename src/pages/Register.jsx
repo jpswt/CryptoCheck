@@ -16,7 +16,9 @@ const Register = () => {
 			await register(email, password);
 			setEmail('');
 			setPassword('');
-			navigate('/home');
+			setTimeout(() => {
+				navigate('/home');
+			}, '500');
 		} catch (err) {
 			setError(err.message);
 		}
