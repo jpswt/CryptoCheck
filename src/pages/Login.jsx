@@ -26,7 +26,10 @@ const Login = () => {
 			<div className="hero-content flex-col lg:flex-row-reverse">
 				<div className="text-center lg:text-left">
 					<h1 className="text-5xl font-bold text-accent">Login</h1>
-					<p className="py-6"></p>
+					<div className="mt-4 rounded-md bg-gray-200 p-2">
+						<p>Email: test@gmail.com</p>
+						<p>Password: L3tm31n123!</p>
+					</div>
 				</div>
 				<div className="sm: card w-full min-w-[22rem] max-w-[22rem] bg-accent shadow-2xl sm:min-w-[28rem] md:min-w-[36rem] lg:flex-shrink-0">
 					<form onSubmit={handleSubmit} className="card-body ">
